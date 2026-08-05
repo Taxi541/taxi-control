@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Distribuição de Corridas</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f6f9;
+}
+
+.container{
+    max-width:500px;
+    margin:40px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,.15);
+}
+
+input,select{
+
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ccc;
+
+}
+
+button{
+
+width:100%;
+padding:15px;
+background:#0078D4;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:18px;
+
+}
+
+textarea{
+
+width:100%;
+height:120px;
+margin-top:20px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🚖 Distribuição de Corridas</h2>
+
+<input id="corrida" placeholder="Número da corrida">
+
+<input id="origem" placeholder="Origem">
+
+<input id="destino" placeholder="Destino">
+
+<select id="motorista">
+
+<option>João</option>
+<option>Carlos</option>
+<option>Pedro</option>
+
+</select>
+
+<button onclick="gerar()">
+
+Gerar Link
+
+</button>
+
+<textarea id="resultado"></textarea>
+
+</div>
+
+<script>
+
+function gerar(){
+
+let corrida=document.getElementById("corrida").value;
+
+let origem=document.getElementById("origem").value;
+
+let destino=document.getElementById("destino").value;
+
+let motorista=document.getElementById("motorista").value;
+
+let link="https://Taxi541.github.io/taxi-control/?corrida="+
+encodeURIComponent(corrida)+
+"&origem="+encodeURIComponent(origem)+
+"&destino="+encodeURIComponent(destino)+
+"&motorista="+encodeURIComponent(motorista);
+
+document.getElementById("resultado").value=
+
+"🚖 Nova Corrida\n\n"+
+"Corrida: "+corrida+"\n"+
+"Origem: "+origem+"\n"+
+"Destino: "+destino+"\n"+
+"Motorista: "+motorista+"\n\n"+
+"Aceite pelo link:\n\n"+link;
+
+}
+
+</script>
+
+</body>
+</html>
