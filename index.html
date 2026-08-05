@@ -78,16 +78,30 @@ button:hover{
 
 <div class="info">
 
-<p><strong>Corrida:</strong> 0001</p>
+<p><strong>Corrida:</strong> <span id="corrida"></span></p>
 
-<p><strong>Origem:</strong> Empresa</p>
+<p><strong>Origem:</strong> <span id="origem"></span></p>
 
-<p><strong>Destino:</strong> Hospital</p>
+<p><strong>Destino:</strong> <span id="destino"></span></p>
 
-<p><strong>Motorista:</strong> João</p>
+<p><strong>Motorista:</strong> <span id="motorista"></span></p>
 
 </div>
+    
+const parametros = new URLSearchParams(window.location.search);
 
+document.getElementById("corrida").innerText =
+parametros.get("corrida") || "Não informado";
+
+document.getElementById("origem").innerText =
+parametros.get("origem") || "Não informado";
+
+document.getElementById("destino").innerText =
+parametros.get("destino") || "Não informado";
+
+document.getElementById("motorista").innerText =
+parametros.get("motorista") || "Não informado";
+    
 <button onclick="aceitar()">
 
 ✅ ACEITAR CORRIDA
