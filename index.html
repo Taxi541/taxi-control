@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Taxi Control - Motorista</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🚖 Taxi Control</h1>
+
+<div class="card">
+
+<h2>Corrida Designada</h2>
+
+<div class="info">
+<strong>👤 Nome do Passageiro:</strong><br>
+<span id="nome"></span>
+</div>
+
+<div class="info">
+<strong>📍 Origem:</strong><br>
+<span id="origem"></span>
+</div>
+
+<div class="info">
+<strong>🏁 Destino:</strong><br>
+<span id="destino"></span>
+</div>
+
+<div class="info">
+<strong>🕒 Horário:</strong><br>
+<span id="horario"></span>
+</div>
+
+<div id="status" class="status aguardando">
+
+🟡 Aguardando início
+
+</div>
+
+<button
+id="botaoCorrida"
+onclick="iniciarCorrida()">
+
+🚖 INICIAR CORRIDA
+
+</button>
+
+<div
+id="mensagem"
+class="sucesso">
+
+</div>
+
+</div>
+
+</div>
+
+<script src="motorista.js"></script>
+
+</body>
+
+</html>
