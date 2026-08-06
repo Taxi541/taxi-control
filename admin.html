@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Taxi Control - Administrador</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🚖 Taxi Control - Admin</h1>
+
+<div class="card">
+
+<h2>Gerar Link de Corrida</h2>
+
+<label for="nome">👤 Nome do Passageiro:</label>
+<input type="text" id="nome" placeholder="Digite o nome do passageiro">
+
+<label for="origem">📍 Origem:</label>
+<input type="text" id="origem" placeholder="Digite o local de origem">
+
+<label for="destino">🏁 Destino:</label>
+<input type="text" id="destino" placeholder="Digite o local de destino">
+
+<label for="horario">🕒 Horário:</label>
+<input type="time" id="horario">
+
+<button onclick="gerarLink()">🔗 Gerar Link</button>
+
+<label for="linkGerado">Link Gerado:</label>
+<textarea id="linkGerado" readonly placeholder="O link será exibido aqui"></textarea>
+
+<button class="copiar" onclick="copiarLink()">📋 Copiar Link</button>
+
+<button class="finalizar" onclick="abrirWhatsApp()">💬 Abrir WhatsApp</button>
+
+<div id="mensagem" class="sucesso">
+✅ Link copiado com sucesso!
+</div>
+
+</div>
+
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>
