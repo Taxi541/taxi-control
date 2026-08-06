@@ -48,80 +48,61 @@ label{
 }
 
 input{
-
     width:100%;
     padding:14px;
     border:1px solid #d0d0d0;
     border-radius:10px;
     font-size:16px;
-
 }
 
 input:focus{
-
     outline:none;
     border:1px solid #0078D4;
-
 }
 
 .card{
-
     background:#f8f9fb;
     border-radius:12px;
     padding:18px;
     margin-bottom:18px;
     border-left:5px solid #0078D4;
-
 }
 
 .info{
-
     margin:12px 0;
     font-size:18px;
     color:#333;
-
 }
 
 .info strong{
-
     color:#0078D4;
-
 }
 
 .status{
-
     margin-top:20px;
     padding:14px;
     border-radius:10px;
     text-align:center;
     font-weight:bold;
     font-size:18px;
-
 }
 
 .status.aguardando{
-
     background:#fff3cd;
     color:#856404;
-
 }
 
 .status.andamento{
-
     background:#d1ecf1;
     color:#0c5460;
-
 }
 
 .status.finalizada{
-
     background:#d4edda;
     color:#155724;
-
 }
 
 button{
-
     width:100%;
     padding:16px;
     margin-top:18px;
@@ -132,24 +113,18 @@ button{
     font-size:18px;
     cursor:pointer;
     transition:.3s;
-
 }
 
 button:hover{
-
     background:#005fa3;
-
 }
 
 button:disabled{
-
     background:#999;
     cursor:not-allowed;
-
 }
 
 textarea{
-
     width:100%;
     height:120px;
     margin-top:15px;
@@ -157,62 +132,55 @@ textarea{
     border:1px solid #ccc;
     padding:12px;
     resize:none;
-
+    font-size:16px;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-.copiar{
+textarea:focus{
+    outline:none;
+    border:1px solid #0078D4;
+}
 
+button.copiar{
     background:#28a745;
-
 }
 
-.copiar:hover{
-
+button.copiar:hover{
     background:#218838;
-
 }
 
-.finalizar{
-
+button.finalizar{
     background:#dc3545;
-
 }
 
-.finalizar:hover{
-
+button.finalizar:hover{
     background:#b52a37;
-
 }
 
 .sucesso{
-
     margin-top:20px;
     background:#eaf7ea;
     border-left:5px solid #28a745;
     padding:15px;
     border-radius:10px;
     display:none;
-
+    color:#155724;
+    font-weight:bold;
+    text-align:center;
 }
 
 @media(max-width:600px){
 
 .container{
-
-padding:22px;
-
+    padding:22px;
 }
 
 h1{
-
-font-size:24px;
-
+    font-size:24px;
 }
 
 button{
-
-font-size:17px;
-
+    font-size:17px;
 }
 
 }
