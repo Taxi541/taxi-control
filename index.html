@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -38,7 +40,6 @@ h1{
 }
 
 button{
-
     width:100%;
     padding:18px;
     border:none;
@@ -47,23 +48,24 @@ button{
     color:white;
     font-size:20px;
     cursor:pointer;
-
+    transition:0.3s;
 }
 
 button:hover{
+    opacity:0.9;
+}
 
-    background:#218838;
-
+button:disabled{
+    background:#6c757d;
+    cursor:not-allowed;
 }
 
 #resultado{
-
     margin-top:25px;
     background:#f2f2f2;
     padding:15px;
     border-radius:10px;
     display:none;
-
 }
 
 </style>
@@ -87,7 +89,19 @@ button:hover{
 <p><strong>Motorista:</strong> <span id="motorista"></span></p>
 
 </div>
-    
+
+<button id="botaoCorrida" onclick="aceitar()">
+
+✅ ACEITAR CORRIDA
+
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
 const parametros = new URLSearchParams(window.location.search);
 
 document.getElementById("corrida").innerText =
@@ -101,44 +115,56 @@ parametros.get("destino") || "Não informado";
 
 document.getElementById("motorista").innerText =
 parametros.get("motorista") || "Não informado";
-    
-<button onclick="aceitar()">
 
-✅ ACEITAR CORRIDA
-
-</button>
-
-<div id="resultado"></div>
-
-</div>
-
-<script>
 
 function aceitar(){
 
-if(navigator.geolocation){
+    let data = new Date();
 
-navigator.geolocation.getCurrentPosition(function(posicao){
+    document.getElementById("resultado").style.display="block";
 
-let data = new Date();
+    document.getElementById("resultado").innerHTML =
+        "<b>✔️ Corrida aceita!</b><br><br>" +
+        "🕒 " + data.toLocaleString();
 
-document.getElementById("resultado").style.display="block";
+    const botao = document.getElementById("botaoCorrida");
 
-document.getElementById("resultado").innerHTML=
-
-"<b>✔️ Corrida aceita!</b><br><br>"+
-"🕒 "+data.toLocaleString()+"<br><br>"+
-"📍 Latitude: "+posicao.coords.latitude+
-"<br><br>"+
-"📍 Longitude: "+posicao.coords.longitude;
-
-});
-
-}else{
-
-alert("Seu navegador não suporta localização.");
+    botao.innerHTML = "🚖 INICIAR CORRIDA";
+    botao.style.background = "#0078D4";
+    botao.onclick = iniciarCorrida;
 
 }
+
+
+function iniciarCorrida(){
+
+    let data = new Date();
+
+    document.getElementById("resultado").innerHTML =
+        "<b>🚖 Corrida iniciada!</b><br><br>" +
+        "🕒 " + data.toLocaleString();
+
+    const botao = document.getElementById("botaoCorrida");
+
+    botao.innerHTML = "🏁 FINALIZAR CORRIDA";
+    botao.style.background = "#dc3545";
+    botao.onclick = finalizarCorrida;
+
+}
+
+
+function finalizarCorrida(){
+
+    let data = new Date();
+
+    document.getElementById("resultado").innerHTML =
+        "<b>🏁 Corrida finalizada!</b><br><br>" +
+        "🕒 " + data.toLocaleString();
+
+    const botao = document.getElementById("botaoCorrida");
+
+    botao.disabled = true;
+    botao.innerHTML = "✅ CORRIDA FINALIZADA";
 
 }
 
